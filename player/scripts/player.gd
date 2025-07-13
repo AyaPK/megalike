@@ -13,7 +13,6 @@ func _ready() -> void:
 	state_machine.initialise(self)
 
 func _physics_process(_delta: float) -> void:
-	print(velocity.y)
 	move_and_slide()
 
 func update_animation(anim_name: String) -> void:
