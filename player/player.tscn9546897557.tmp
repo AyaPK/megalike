@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cekwkh84ex6j7"]
+[gd_scene load_steps=12 format=3 uid="uid://cekwkh84ex6j7"]
 
 [ext_resource type="Texture2D" uid="uid://bo1ygjrbvqp28" path="res://assets/sprites/megaman_sprite.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://2of4vd7t2sfr" path="res://player/scripts/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://sba7fnqu7oeo" path="res://player/scripts/player_state_machine.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://bownd7t6hyq6t" path="res://player/scripts/states/state_idle.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://bb6wwlihjgw66" path="res://player/scripts/states/state_run.gd" id="5_g6k8r"]
-[ext_resource type="Script" uid="uid://p1u3tj33n3sa" path="res://player/scripts/states/state_jump.gd" id="6_g6k8r"]
-[ext_resource type="Script" uid="uid://dblbx3rhn4v8t" path="res://player/scripts/states/state_fall.gd" id="7_boad6"]
 
 [sub_resource type="Animation" id="Animation_yw30f"]
 length = 0.001
@@ -88,7 +86,6 @@ size = Vector2(21, 23)
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
 script = ExtResource("1_rkbax")
-move_speed = 70
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -115,9 +112,3 @@ script = ExtResource("4_qjkh3")
 
 [node name="Run" type="Node" parent="StateMachine"]
 script = ExtResource("5_g6k8r")
-
-[node name="Jump" type="Node" parent="StateMachine"]
-script = ExtResource("6_g6k8r")
-
-[node name="Fall" type="Node" parent="StateMachine"]
-script = ExtResource("7_boad6")

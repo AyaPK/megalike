@@ -105,7 +105,7 @@ separation = Vector2i(1, 1)
 
 [sub_resource type="TileSet" id="TileSet_m8u5f"]
 physics_layer_0/collision_layer = 16
-custom_data_layer_0/name = "ladder"
+custom_data_layer_0/name = "isLadder"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_wt17y")
 
