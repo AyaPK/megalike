@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuotukaehcxq6"]
+
+[ext_resource type="PackedScene" uid="uid://tolb387y1vlp" path="res://tilemaps/galaxy_man/galaxy_man.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://cekwkh84ex6j7" path="res://player/player.tscn" id="2_wt17y"]
+
+[node name="Playground" type="Node2D"]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_rupst")]
+
+[node name="Player" parent="." instance=ExtResource("2_wt17y")]
+position = Vector2(247, 102)
