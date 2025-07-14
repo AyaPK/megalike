@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cekwkh84ex6j7"]
+[gd_scene load_steps=15 format=3 uid="uid://cekwkh84ex6j7"]
 
 [ext_resource type="Texture2D" uid="uid://bo1ygjrbvqp28" path="res://assets/sprites/megaman_sprite.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://2of4vd7t2sfr" path="res://player/scripts/player.gd" id="1_rkbax"]
@@ -7,9 +7,6 @@
 [ext_resource type="Script" uid="uid://bb6wwlihjgw66" path="res://player/scripts/states/state_run.gd" id="5_g6k8r"]
 [ext_resource type="Script" uid="uid://p1u3tj33n3sa" path="res://player/scripts/states/state_jump.gd" id="6_g6k8r"]
 [ext_resource type="Script" uid="uid://dblbx3rhn4v8t" path="res://player/scripts/states/state_fall.gd" id="7_boad6"]
-[ext_resource type="Script" uid="uid://bc8oarkl4bhf8" path="res://player/scripts/states/state_climb_idle.gd" id="8_rgyib"]
-[ext_resource type="Script" uid="uid://bud8mnoh5cy2o" path="res://player/scripts/states/state_climb_up.gd" id="9_hg6s5"]
-[ext_resource type="Script" uid="uid://bjwtl8wonfef3" path="res://player/scripts/states/state_climb_down.gd" id="10_8t03j"]
 
 [sub_resource type="Animation" id="Animation_yw30f"]
 length = 0.001
@@ -77,38 +74,19 @@ tracks/0/keys = {
 "values": [2, 3, 4, 3, 2]
 }
 
-[sub_resource type="Animation" id="Animation_boad6"]
-resource_name = "climb"
-length = 0.2
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [6, 7]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
 _data = {
 &"RESET": SubResource("Animation_yw30f"),
-&"climb": SubResource("Animation_boad6"),
 &"idle": SubResource("Animation_qjkh3"),
 &"jump": SubResource("Animation_rkbax"),
 &"run": SubResource("Animation_g6k8r")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hg6s5"]
-radius = 5.5
-height = 23.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
+size = Vector2(13, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boad6"]
-size = Vector2(4, 4)
+size = Vector2(4, 21)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 16
@@ -119,7 +97,7 @@ move_speed = 70
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oul6g")
-hframes = 8
+hframes = 6
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -130,7 +108,7 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 2.5)
-shape = SubResource("CapsuleShape2D_hg6s5")
+shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("3_g1dw6")
@@ -147,21 +125,10 @@ script = ExtResource("6_g6k8r")
 [node name="Fall" type="Node" parent="StateMachine"]
 script = ExtResource("7_boad6")
 
-[node name="ClimbIdle" type="Node" parent="StateMachine"]
-script = ExtResource("8_rgyib")
-
-[node name="ClimbUp" type="Node" parent="StateMachine"]
-script = ExtResource("9_hg6s5")
-
-[node name="ClimbDown" type="Node" parent="StateMachine"]
-script = ExtResource("10_8t03j")
-
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -7)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_boad6")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

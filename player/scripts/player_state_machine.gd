@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 	changeState(current_state.process(delta))
 
 func _unhandled_input(event: InputEvent) -> void:
-	changeState(current_state.handleInput(event))
+	changeState(current_state.handle_input(event))
 
 func initialise(_player:Player) -> void:
 	states = []
