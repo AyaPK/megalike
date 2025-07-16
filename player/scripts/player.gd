@@ -3,8 +3,6 @@ class_name Player extends CharacterBody2D
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var camera_2d: Camera2D = $Camera2D
-
 @export var move_speed: int
 
 var on_ladder: bool = false
