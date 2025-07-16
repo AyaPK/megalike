@@ -29,6 +29,11 @@ func process(_delta: float) -> State:
 		player.sprite.scale.x = 1
 	else:
 		player.velocity.x = 0
+	
+	if Input.is_action_pressed("move_down") and player.on_ladder:
+		return climb_down
+	elif Input.is_action_pressed("move_up") and player.on_ladder:
+		return climb_up
 	return null
 
 func handle_input(_event: InputEvent) -> State:

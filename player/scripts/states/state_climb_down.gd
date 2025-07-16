@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func enter() -> void:
 	player.update_animation("climb")
+	player.velocity.x = 0
 
 func exit() -> void:
 	pass
