@@ -18,6 +18,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func initialise(_player:Player) -> void:
 	states = []
+
 	
 	for state in get_children():
 		if state is State:
@@ -30,7 +31,6 @@ func initialise(_player:Player) -> void:
 func changeState(new_state: State) -> void:
 	if new_state == null || new_state == current_state:
 		return
-	
 	if current_state:
 		current_state.exit()
 	

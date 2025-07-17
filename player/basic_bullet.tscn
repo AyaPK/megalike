@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dilbpwd46lmg"]
+
+[ext_resource type="Script" uid="uid://b5yg54u7pia6n" path="res://player/scripts/basic_bullet.gd" id="1_hftci"]
+[ext_resource type="Texture2D" uid="uid://bfim7jdfwyfka" path="res://assets/sprites/bullet.png" id="1_rinv4"]
+
+[node name="BasicBullet" type="CharacterBody2D"]
+script = ExtResource("1_hftci")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rinv4")

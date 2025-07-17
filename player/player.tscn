@@ -97,7 +97,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2ieo8"]
 resource_name = "idle_shoot"
-length = 0.5
+length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -118,7 +118,7 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(0.3),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -197,6 +197,12 @@ collision_mask = 32
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_boad6")
+
+[node name="ShotOriginLeft" type="Node2D" parent="."]
+position = Vector2(-17, 3)
+
+[node name="ShotOriginRight" type="Node2D" parent="."]
+position = Vector2(17, 3)
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
