@@ -15,8 +15,12 @@ func enter() -> void:
 	player.update_animation("idle_shoot")
 	var bullet: CharacterBody2D = BASIC_BULLET.instantiate()
 	player.get_parent().add_child(bullet)
-	bullet.global_position = player.shot_origin.global_position
-	bullet.begin_moving("right")
+	var start_pos: Vector2
+	if player.facing == "left":
+		start_pos = player.shot_origin_left.global_position
+	else:
+		start_pos = player.shot_origin_right.global_position
+	bullet.begin_moving(player.facing, start_pos)
 
 func exit() -> void:
 	pass

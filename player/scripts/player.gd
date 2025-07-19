@@ -4,11 +4,14 @@ class_name Player extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @export var move_speed: int
-@onready var shot_origin: Node2D = $ShotOrigin
+@onready var shot_origin_left: Node2D = $ShotOriginLeft
+@onready var shot_origin_right: Node2D = $ShotOriginRight
+
 
 var on_ladder: bool = false
 var v: Vector2 = Vector2.ZERO
 var anim_frame: int = 0
+var facing: String = "left"
 @onready var idle: State_Idle = $StateMachine/Idle
 
 func _ready() -> void:

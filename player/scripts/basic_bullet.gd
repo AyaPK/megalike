@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 func _ready() -> void:
-	begin_moving("right")
+	pass
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	pass
 
-func begin_moving(direction: String) -> void:
+func begin_moving(direction: String, place: Vector2) -> void:
+	global_position = place
 	if direction == "left":
 		velocity.x = -200
 	elif direction == "right":
