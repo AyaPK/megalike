@@ -16,18 +16,20 @@ tile_set = ExtResource("1_is3ju")
 [node name="Camera" parent="." instance=ExtResource("3_is3ju")]
 zoom = Vector2(1, 1)
 
-[node name="Horizontal_Transition" parent="." instance=ExtResource("4_is3ju")]
+[node name="Screen_Transition" parent="." instance=ExtResource("4_is3ju")]
 position = Vector2(-78, -1)
-default_collision = true
+side = null
+is_transition = null
 
-[node name="Horizontal_Transition2" parent="." instance=ExtResource("4_is3ju")]
+[node name="Screen_Transition2" parent="." instance=ExtResource("4_is3ju")]
 position = Vector2(1197, -80)
 side = 1
+is_transition = null
 
-[node name="Horizontal_Transition3" parent="." instance=ExtResource("4_is3ju")]
+[node name="Screen_Transition3" parent="." instance=ExtResource("4_is3ju")]
 position = Vector2(447, 0)
 side = 1
-is_transition = true
+is_transition = null
 
 [node name="PlayerStart" parent="." instance=ExtResource("4_o00ia")]
-position = Vector2(43, -102)
+position = Vector2(403, -79)

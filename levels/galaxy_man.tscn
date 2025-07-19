@@ -21,11 +21,13 @@ tile_set = ExtResource("1_y3cjx")
 position = Vector2(40, 125)
 
 [node name="Screen_Transition" parent="." instance=ExtResource("4_5uvv7")]
-position = Vector2(0, 218)
+position = Vector2(0, 123)
 
 [node name="Screen_Transition2" parent="." instance=ExtResource("4_5uvv7")]
-position = Vector2(575, 186)
+position = Vector2(578, 132)
 side = 1
+is_transition = true
 
 [node name="Screen_Transition3" parent="." instance=ExtResource("4_5uvv7")]
-position = Vector2(811, 201)
+position = Vector2(1277, 132)
+side = 1
