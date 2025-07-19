@@ -12,7 +12,9 @@ var on_ladder: bool = false
 var v: Vector2 = Vector2.ZERO
 var anim_frame: int = 0
 var facing: String = "left"
+var shooting: bool = false
 @onready var idle: State_Idle = $StateMachine/Idle
+@onready var jump: State_Jump = $StateMachine/Jump
 
 func _ready() -> void:
 	state_machine.initialise(self)
@@ -41,6 +43,7 @@ func _on_hitbox_body_exited(_body: Node2D) -> void:
 func leave_shoot() -> void:
 	var state_mapping: Dictionary = {
 		"idle": idle,
+		"jump": jump,
 	}
 	var anim_name: String = animation_player.current_animation.replace("_shoot", "")
 	animation_player.play(anim_name)

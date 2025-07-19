@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cekwkh84ex6j7"]
+[gd_scene load_steps=22 format=3 uid="uid://cekwkh84ex6j7"]
 
 [ext_resource type="Texture2D" uid="uid://bo1ygjrbvqp28" path="res://assets/sprites/megaman_sprite.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://2of4vd7t2sfr" path="res://player/scripts/player.gd" id="1_rkbax"]
@@ -12,7 +12,6 @@
 [ext_resource type="Script" uid="uid://bjwtl8wonfef3" path="res://player/scripts/states/state_climb_down.gd" id="10_8t03j"]
 [ext_resource type="Script" uid="uid://cauajpvdm2x4m" path="res://player/scripts/states/idle_shoot.gd" id="11_2ieo8"]
 [ext_resource type="Script" uid="uid://cw8fvc3j3n8os" path="res://player/scripts/states/jump_shoot.gd" id="12_ebec5"]
-[ext_resource type="Script" uid="uid://ds778yj3eakch" path="res://player/scripts/states/fall_shoot.gd" id="13_yllr7"]
 
 [sub_resource type="Animation" id="Animation_yw30f"]
 length = 0.001
@@ -74,10 +73,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.33333),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [8]
+"values": [8, 1]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -128,23 +127,6 @@ tracks/0/keys = {
 "values": [2, 3, 4, 3, 2]
 }
 
-[sub_resource type="Animation" id="Animation_yllr7"]
-resource_name = "jump_shoot"
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [12]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_boad6"]
 _data = {
 &"RESET": SubResource("Animation_yw30f"),
@@ -152,7 +134,6 @@ _data = {
 &"idle": SubResource("Animation_qjkh3"),
 &"idle_shoot": SubResource("Animation_2ieo8"),
 &"jump": SubResource("Animation_rkbax"),
-&"jump_shoot": SubResource("Animation_yllr7"),
 &"run": SubResource("Animation_g6k8r")
 }
 
@@ -170,7 +151,7 @@ move_speed = 80
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oul6g")
-hframes = 13
+hframes = 12
 frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -212,9 +193,6 @@ script = ExtResource("11_2ieo8")
 
 [node name="JumpShoot" type="Node" parent="StateMachine"]
 script = ExtResource("12_ebec5")
-
-[node name="FallShoot" type="Node" parent="StateMachine"]
-script = ExtResource("13_yllr7")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0

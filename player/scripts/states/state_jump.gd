@@ -3,6 +3,7 @@ class_name State_Jump extends State
 @onready var fall: State_Fall = $"../Fall"
 @onready var climb_up: State_Climb_Up = $"../ClimbUp"
 @onready var climb_down: State_Climb_Down = $"../ClimbDown"
+@onready var jump_shoot: State_Jump_Shoot = $"../JumpShoot"
 
 const JUMP_FORCE: float = -325
 const GRAVITY: float = 10
@@ -41,4 +42,6 @@ func handle_input(_event: InputEvent) -> State:
 		return climb_up
 	if Input.is_action_just_pressed("move_down") and player.on_ladder:
 		return climb_down
+	if Input.is_action_just_pressed("shoot"):
+		return jump_shoot
 	return null
