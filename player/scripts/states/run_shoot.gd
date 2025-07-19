@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func enter() -> void:
 	if player.animation_player.current_animation != "run_shoot":
-		var pos: int = player.animation_player.current_animation_position
+		var pos: float = player.animation_player.current_animation_position
 		player.update_animation("run_shoot")
 		player.animation_player.seek(pos)
 	

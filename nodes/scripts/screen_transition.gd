@@ -11,13 +11,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 	print("entered")
 	if side == Sides.LEFT:
-		camera.limit_left = global_position.x
+		camera.limit_left = int(global_position.x)
 	else:
-		camera.limit_right = global_position.x
+		camera.limit_right = int(global_position.x)

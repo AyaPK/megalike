@@ -3,9 +3,8 @@ extends CharacterBody2D
 func _ready() -> void:
 	pass
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
-	pass
 
 func begin_moving(direction: String, place: Vector2) -> void:
 	global_position = place
