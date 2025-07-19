@@ -15,6 +15,7 @@ var facing: String = "left"
 var shooting: bool = false
 @onready var idle: State_Idle = $StateMachine/Idle
 @onready var jump: State_Jump = $StateMachine/Jump
+@onready var climb: State_Climb_Idle = $StateMachine/ClimbIdle
 
 func _ready() -> void:
 	state_machine.initialise(self)
@@ -44,6 +45,7 @@ func leave_shoot() -> void:
 	var state_mapping: Dictionary = {
 		"idle": idle,
 		"jump": jump,
+		"climb": climb,
 	}
 	var anim_name: String = animation_player.current_animation.replace("_shoot", "")
 	animation_player.play(anim_name)
