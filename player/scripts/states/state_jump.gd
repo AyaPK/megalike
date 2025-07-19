@@ -25,9 +25,11 @@ func process(_delta: float) -> State:
 	if Input.is_action_pressed("move_right"):
 		player.velocity.x = player.move_speed
 		player.sprite.scale.x = -1
+		player.facing = "right"
 	elif Input.is_action_pressed("move_left"):
 		player.velocity.x = -player.move_speed
 		player.sprite.scale.x = 1
+		player.facing = "left"
 	else:
 		player.velocity.x = 0
 	
