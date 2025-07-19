@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccf2lypy4x1tq"]
+
+[ext_resource type="Texture2D" uid="uid://bo1ygjrbvqp28" path="res://assets/sprites/megaman_sprite.png" id="1_w7qcw"]
+
+[node name="PlayerStart" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 0.698039)
+position = Vector2(-4, 1)
+texture = ExtResource("1_w7qcw")
+hframes = 17

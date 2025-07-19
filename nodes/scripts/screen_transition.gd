@@ -4,6 +4,7 @@ class_name Screen_Transition extends Node2D
 
 enum Sides {LEFT, RIGHT}
 @export var side: Sides
+@export var is_transition: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,8 +17,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	print("entered")
 	if side == Sides.LEFT:
 		camera.limit_left = int(global_position.x)
 	else:
 		camera.limit_right = int(global_position.x)
+
+
+func _on_transition_area_body_entered(body: Node2D) -> void:
+	print(body)

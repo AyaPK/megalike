@@ -215,7 +215,7 @@ height = 23.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boad6"]
 size = Vector2(4, 4)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 process_mode = 3
 collision_mask = 16
 script = ExtResource("1_rkbax")

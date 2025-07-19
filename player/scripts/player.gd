@@ -7,7 +7,6 @@ class_name Player extends CharacterBody2D
 @onready var shot_origin_left: Node2D = $ShotOriginLeft
 @onready var shot_origin_right: Node2D = $ShotOriginRight
 
-
 var on_ladder: bool = false
 var v: Vector2 = Vector2.ZERO
 var anim_frame: int = 0

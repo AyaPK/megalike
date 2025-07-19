@@ -6,6 +6,9 @@ class_name State_Run_Shoot extends State
 @onready var fall: State_Fall = $"../Fall"
 @onready var climb_up: State_Climb_Up = $"../ClimbUp"
 @onready var climb_down: State_Climb_Down = $"../ClimbDown"
+@onready var run: State_Run = $"../Run"
+
+var time_in_state: float = 0.0
 
 const BASIC_BULLET = preload("res://player/basic_bullet.tscn")
 
@@ -13,6 +16,7 @@ func _ready() -> void:
 	pass
 
 func enter() -> void:
+	time_in_state = 0
 	if player.animation_player.current_animation != "run_shoot":
 		var pos: float = player.animation_player.current_animation_position
 		player.update_animation("run_shoot")
@@ -30,7 +34,7 @@ func enter() -> void:
 func exit() -> void:
 	pass
 
-func process(_delta: float) -> State:
+func process(delta: float) -> State:
 	if !Input.is_action_pressed("move_right") and !Input.is_action_pressed("move_left"):
 		return idle
 		
@@ -54,6 +58,9 @@ func process(_delta: float) -> State:
 		return climb_down
 	elif Input.is_action_pressed("move_up") and player.on_ladder:
 		return climb_up
+	time_in_state += delta
+	if time_in_state >= 0.5:
+		return run
 	return null
 
 func physics(_delta: float) -> State:
