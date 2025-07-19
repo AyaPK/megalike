@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhvfg8vrnthx3"]
+
+[ext_resource type="Script" uid="uid://g45cbgjejnlb" path="res://nodes/scripts/screen_transition.gd" id="1_thny1"]
+
+[node name="Screen_Transition" type="Node2D"]
+script = ExtResource("1_thny1")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+scale = Vector2(0.0999999, 1)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://cuotukaehcxq6"]
+[gd_scene load_steps=5 format=4 uid="uid://cuotukaehcxq6"]
 
 [ext_resource type="PackedScene" uid="uid://tolb387y1vlp" path="res://tilemaps/galaxy_man/galaxy_man.tscn" id="1_rupst"]
 [ext_resource type="PackedScene" uid="uid://cekwkh84ex6j7" path="res://player/player.tscn" id="2_wt17y"]
 [ext_resource type="Script" uid="uid://cgem5s5tlx12b" path="res://player/scripts/camera_2d.gd" id="3_m8u5f"]
+[ext_resource type="PackedScene" uid="uid://bhvfg8vrnthx3" path="res://nodes/screen_transition.tscn" id="4_is3ju"]
 
 [node name="Playground" type="Node2D"]
 
@@ -12,6 +13,12 @@ tile_map_data = PackedByteArray("AAD/////AQADAAsAAAD//wAAAQADAAsAAAD//wEAAQADAAs
 [node name="Player" parent="." instance=ExtResource("2_wt17y")]
 position = Vector2(171, 89)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(0.75, 0.75)
 script = ExtResource("3_m8u5f")
+
+[node name="Screen_Transition" parent="." instance=ExtResource("4_is3ju")]
+position = Vector2(63, 210)
+
+[node name="Screen_Transition2" parent="." instance=ExtResource("4_is3ju")]
+position = Vector2(386, 209)
