@@ -1,7 +1,8 @@
-[gd_scene load_steps=28 format=3 uid="uid://cekwkh84ex6j7"]
+[gd_scene load_steps=30 format=3 uid="uid://cekwkh84ex6j7"]
 
 [ext_resource type="Texture2D" uid="uid://bo1ygjrbvqp28" path="res://assets/sprites/megaman_sprite.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://2of4vd7t2sfr" path="res://player/scripts/player.gd" id="1_rkbax"]
+[ext_resource type="Shader" uid="uid://c6ei4w45gix2j" path="res://player/scripts/weapon_palette_swap.gdshader" id="2_32hag"]
 [ext_resource type="Script" uid="uid://sba7fnqu7oeo" path="res://player/scripts/player_state_machine.gd" id="3_g1dw6"]
 [ext_resource type="Script" uid="uid://bownd7t6hyq6t" path="res://player/scripts/states/state_idle.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://bb6wwlihjgw66" path="res://player/scripts/states/state_run.gd" id="5_g6k8r"]
@@ -15,6 +16,14 @@
 [ext_resource type="Script" uid="uid://ds778yj3eakch" path="res://player/scripts/states/fall_shoot.gd" id="13_yllr7"]
 [ext_resource type="Script" uid="uid://b2l2wdayveiyl" path="res://player/scripts/states/run_shoot.gd" id="14_kb6p2"]
 [ext_resource type="Script" uid="uid://cmds4ypafxljr" path="res://player/scripts/states/climb_shoot.gd" id="15_wodsf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqiix"]
+shader = ExtResource("2_32hag")
+shader_parameter/color_from_1 = Color(0.219608, 0.721569, 0.972549, 1)
+shader_parameter/color_from_2 = Color(0, 0.439216, 0.909804, 1)
+shader_parameter/color_to_1 = Color(0.627451, 0.517647, 0.972549, 1)
+shader_parameter/color_to_2 = Color(0.501961, 0, 0.941176, 1)
+shader_parameter/tolerance = 0.01
 
 [sub_resource type="Animation" id="Animation_yw30f"]
 length = 0.001
@@ -222,6 +231,7 @@ script = ExtResource("1_rkbax")
 move_speed = 80
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_tqiix")
 texture = ExtResource("1_oul6g")
 hframes = 17
 frame = 1

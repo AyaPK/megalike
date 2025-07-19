@@ -49,3 +49,8 @@ func leave_shoot() -> void:
 	var anim_name: String = animation_player.current_animation.replace("_shoot", "")
 	animation_player.play(anim_name)
 	state_machine.changeState(state_mapping[anim_name])
+
+func set_weapon_palette(color1: Color, color2: Color) -> void:
+	var shader_material := $Sprite2D.material as ShaderMaterial
+	shader_material.set_shader_parameter("color_to_1", color1)
+	shader_material.set_shader_parameter("color_to_2", color2)
