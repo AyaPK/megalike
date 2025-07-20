@@ -10,6 +10,9 @@ func _ready() -> void:
 func enter() -> void:
 	player.update_animation("climb")
 	player.velocity.x = 0
+	print(player.global_position.x)
+	player.global_position.x = round(player.global_position.x/8)*8
+	print(player.global_position.x)
 
 func exit() -> void:
 	pass

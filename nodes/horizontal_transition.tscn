@@ -8,7 +8,7 @@ size = Vector2(3, 224)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d4xq"]
 size = Vector2(0, 224)
 
-[node name="Screen_Transition" type="CharacterBody2D"]
+[node name="Horiztonal_Transition" type="CharacterBody2D"]
 collision_layer = 16
 script = ExtResource("1_thny1")
 

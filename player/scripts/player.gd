@@ -35,7 +35,8 @@ func restart_animation() -> void:
 	animation_player.seek(0)
 
 func _on_hitbox_body_entered(_body: Node2D) -> void:
-	on_ladder = true
+	if _body.get_class() == "TileMapLayer":
+		on_ladder = true
 
 func _on_hitbox_body_exited(_body: Node2D) -> void:
 	on_ladder = false

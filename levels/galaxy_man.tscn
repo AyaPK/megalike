@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cq25k5p7ewei2" path="res://tilemaps/tilesets/galaxy_man.tres" id="1_y3cjx"]
 [ext_resource type="PackedScene" uid="uid://cekwkh84ex6j7" path="res://player/player.tscn" id="2_72ffm"]
 [ext_resource type="Script" uid="uid://cgem5s5tlx12b" path="res://player/scripts/camera_2d.gd" id="3_5uvv7"]
-[ext_resource type="PackedScene" uid="uid://bhvfg8vrnthx3" path="res://nodes/screen_transition.tscn" id="4_5uvv7"]
+[ext_resource type="PackedScene" uid="uid://bhvfg8vrnthx3" path="res://nodes/horizontal_transition.tscn" id="4_5uvv7"]
 
 [node name="GalaxyMan" type="Node2D"]
 
