@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://g45cbgjejnlb" path="res://nodes/scripts/screen_transition.gd" id="1_thny1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thny1"]
-size = Vector2(3, 224)
+size = Vector2(3, 188)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5d4xq"]
 size = Vector2(0, 224)
