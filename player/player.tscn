@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cekwkh84ex6j7"]
+[gd_scene load_steps=31 format=3 uid="uid://cekwkh84ex6j7"]
 
 [ext_resource type="Texture2D" uid="uid://bo1ygjrbvqp28" path="res://assets/sprites/megaman_sprite.png" id="1_oul6g"]
 [ext_resource type="Script" uid="uid://2of4vd7t2sfr" path="res://player/scripts/player.gd" id="1_rkbax"]
@@ -260,6 +260,9 @@ height = 20.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boad6"]
 size = Vector2(2, 4)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32hag"]
+size = Vector2(4, 2)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 process_mode = 3
 collision_mask = 16
@@ -335,6 +338,20 @@ position = Vector2(-17, -5)
 
 [node name="ShotOriginRight" type="Node2D" parent="."]
 position = Vector2(17, -5)
+
+[node name="LadderCheckTop" type="Area2D" parent="."]
+position = Vector2(0, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderCheckTop"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_32hag")
+
+[node name="LadderCheckBottom" type="Area2D" parent="."]
+position = Vector2(0, -19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LadderCheckBottom"]
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_32hag")
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

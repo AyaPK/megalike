@@ -18,7 +18,7 @@ func exit() -> void:
 
 func process(_delta: float) -> State:
 	player.velocity = Vector2.ZERO
-	if !player.is_on_floor():
+	if !player.is_on_floor() and !player.on_ladder:
 		return fall
 	return null
 

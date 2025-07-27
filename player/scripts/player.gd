@@ -8,6 +8,8 @@ class_name Player extends CharacterBody2D
 @onready var shot_origin_right: Node2D = $ShotOriginRight
 
 var on_ladder: bool = false
+var ladder_top: bool = false
+var ladder_bottom: bool = true
 var v: Vector2 = Vector2.ZERO
 var anim_frame: int = 0
 var facing: String = "left"
@@ -39,7 +41,8 @@ func _on_hitbox_body_entered(_body: Node2D) -> void:
 		on_ladder = true
 
 func _on_hitbox_body_exited(_body: Node2D) -> void:
-	on_ladder = false
+	if _body.get_class() == "TileMapLayer":
+		on_ladder = false
 
 func leave_shoot() -> void:
 	var state_mapping: Dictionary = {

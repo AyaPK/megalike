@@ -34,7 +34,7 @@ func process(_delta: float) -> State:
 
 	if Input.is_action_just_pressed("jump"):
 		return jump
-	if !player.is_on_floor():
+	if !player.is_on_floor() and !player.on_ladder:
 		return fall
 	
 	if Input.is_action_pressed("move_down") and player.on_ladder:
